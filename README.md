@@ -38,20 +38,26 @@ Next steps: https://flutter.dev/docs/get-started/learn-more
 
 ### Create a new Flutter project from the command line(terminal).
 
-Command: `flutter create -i swift -a kotlin --androidx --org com.itachi-p --description 'A new Flutter application!' my_app`
-     Output: options:
-             -i: for iOS directory, 'swift' or 'objc'(objective-c)
-               Selected 'swift' make 'AppDelegate.swift' file.
-             -a: for Android directory, 'kotlin' or 'java'
-               Selected 'kotlin' make 'MainActivity.kt' file.
-             --androidx:
-               Use AndroidX support libraries.
-               Almost Flutter's libraries (Plugin package) corresponds to AndroidX.
-             --org:
+Command:<br>
+`flutter create -i swift -a kotlin --androidx --org com.itachi-p --description 'A new Flutter application!' my_app`
+
+<p>options:</p>
+<ul>
+  <li>-i: for iOS directory, 'swift' or 'objc'(objective-c)<br>
+      Selected 'swift' make 'AppDelegate.swift' file.</li>
+  <li>-a: for Android directory, 'kotlin' or 'java'<br>
+      Selected 'kotlin' make 'MainActivity.kt' file.</li>
+  <li>--androidx:<br>
+      Use AndroidX support libraries.<br>
+      Almost Flutter's libraries (Plugin package) corresponds to AndroidX.</li>
+  <li>--org:<br>
                In the case of Android, it's used as packages or applicationId.
                In the case of iOS, it's used as Bundle Identifier.
-             --description:
+  </li>
+  <li>--description:<br>
                It's writing to description in 'pubspec.yaml' or 'README.md'.
-             At last, write project name. (change 'my_app' to new project name)
+  </li>
+  <li>At last, write project name. (change 'my_app' to new project name)</li>
+</ul>
 
 
