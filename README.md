@@ -40,8 +40,9 @@ Next steps: https://flutter.dev/docs/get-started/learn-more
 
 Command:<br>
 `flutter create -i swift -a kotlin --androidx --org com.itachi-p --description 'A new Flutter application!' my_app`
+
+<p>options:</p>
 <ul>
-  <li>options:</li>
   <li>-i: for iOS directory, 'swift' or 'objc'(objective-c)<br>
       Selected 'swift' make 'AppDelegate.swift' file.</li>
   <li>-a: for Android directory, 'kotlin' or 'java'<br>
