@@ -62,3 +62,20 @@ linter:
     - prefer_const_literals_to_create_immutables
     - cancel_subscriptions
     - close_sinks
+"
+analyzer:
+  strong-mode:
+    implicit-casts: false # 型推論で暗黙的キャストができないようにする
+    implicit-dynamic: false # 型推論で方を決定できない場合に「dynamic」型にしないようにする
+  errors:
+    hash_and_equals: error # linterルールの「hash_and_equals」をerrorに変えている
+  exclude:
+    - lib/l10n/*.dart # 「exclude」を使って「lib/l10n/*.dart」を静的解析の対象外にしている
+linter:
+  rules:
+    - hash_and_equals
+
+  https://dart.dev/guides/language/analysis-options      
+      
+"
+
