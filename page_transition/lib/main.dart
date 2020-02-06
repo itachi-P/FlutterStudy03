@@ -22,12 +22,12 @@ class FirstPage extends StatelessWidget {
       body: Center(
         child: RaisedButton(
           onPressed: () {
-            Navigator.push(
-              context,
-              MaterialPageRoute(builder: (context) {
+            Navigator.push(context, MaterialPageRoute(
+              builder: (context) {
                 return SecondPage();
-              }),
-            );
+              },
+              //fullscreenDialog: true // モーダル遷移(サブタスク画面移動)の場合
+            ));
           },
           child: Text('Next Page'),
         ),
