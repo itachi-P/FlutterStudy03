@@ -29,6 +29,7 @@ class _MyHomePageState extends State<MyHomePage> {
 
   void _incrementCounter() {
     setState(() {
+      // これが呼び出される度に状態を変更し、画面表示を変える。
       _counter++;
     });
   }
@@ -56,7 +57,7 @@ class _MyHomePageState extends State<MyHomePage> {
       floatingActionButton: FloatingActionButton(
         onPressed: _incrementCounter,
         tooltip: 'Increment',
-        child: Icon(Icons.add),
+        child: Icon(Icons.add_circle),
       ), // This trailing comma makes auto-formatting nicer for build methods.
     );
   }
