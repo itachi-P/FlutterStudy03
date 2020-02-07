@@ -26,7 +26,7 @@ class FirstPage extends StatelessWidget {
               context,
               MaterialPageRoute(
                   builder: (context) {
-                    return SecondPage('messageFromFirst');
+                    return SecondPage('FirstPageから来た');
                   },
                   fullscreenDialog: true), // モーダル遷移(サブタスク画面移動)の場合
             );
@@ -44,6 +44,7 @@ class SecondPage extends StatelessWidget {
   SecondPage(this.messageFromFirst);
 
   Widget build(BuildContext context) {
+    print(messageFromFirst);
     return Scaffold(
       appBar: AppBar(title: const Text('Second Page')),
       body: Center(
