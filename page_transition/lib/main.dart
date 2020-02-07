@@ -21,13 +21,16 @@ class FirstPage extends StatelessWidget {
       appBar: AppBar(title: const Text('First Page')),
       body: Center(
         child: RaisedButton(
-          onPressed: () {
-            Navigator.push(context, MaterialPageRoute(
-              builder: (context) {
-                return SecondPage();
-              },
-              //fullscreenDialog: true // モーダル遷移(サブタスク画面移動)の場合
-            ));
+          onPressed: () async {
+            var message = await Navigator.push(
+              context,
+              MaterialPageRoute(
+                  builder: (context) {
+                    return SecondPage("ddd");
+                  },
+                  fullscreenDialog: true), // モーダル遷移(サブタスク画面移動)の場合
+            );
+            print(message);
           },
           child: Text('Next Page'),
         ),
@@ -37,13 +40,16 @@ class FirstPage extends StatelessWidget {
 }
 
 class SecondPage extends StatelessWidget {
+  final String messageFromFirst;
+  SecondPage(this.messageFromFirst);
+
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(title: const Text('Second Page')),
       body: Center(
         child: RaisedButton(
           onPressed: () {
-            Navigator.pop(context);
+            Navigator.pop<String>(context, "SecondPageから戻った");
           },
           child: Text('Go back'),
         ),
