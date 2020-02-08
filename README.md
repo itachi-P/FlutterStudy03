@@ -62,7 +62,7 @@ Command:<br>
 
 ---
 ## Dart language
-- Dart is a syntax very similar to Java and JavaScript.
+- Dart's syntax is very similar to Java and JavaScript.
 
 [The grammer of Dart language(by Google)](https://dart.dev/guides/language/language-tour)
 
