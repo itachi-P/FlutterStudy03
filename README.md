@@ -60,4 +60,9 @@ Command:<br>
   <li>At last, write project name. (change 'my_app' to new project name)</li>
 </ul>
 
+---
+## Dart language
+- Dart is a syntax very similar to Java and JavaScript.
 
+[The grammer of Dart language(by Google)](https://dart.dev/guides/language/language-tour)
+[DartPad](https://dartpad.dartlang.org/)
