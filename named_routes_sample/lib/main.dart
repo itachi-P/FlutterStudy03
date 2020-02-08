@@ -6,10 +6,25 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      title: 'Flutter Demo 06',
+      theme: ThemeData(
+        primarySwatch: Colors.green,
+      ),
       initialRoute: '/',
       routes: {
         '/': (context) => FirstPage(),
-        '/second': (context) => SecondPage(),
+      },
+      onGenerateRoute: (settings) {
+        if (settings.name == '/second') {
+          var messageFromFirst = settings.arguments;
+          return MaterialPageRoute(
+            builder: (context) {
+              return SecondPage(
+                  messageFromFirst); // SecondPageのコンストラクタは引数無しだと怒られる
+            },
+          );
+        }
+        return null;
       },
     );
   }
@@ -25,7 +40,7 @@ class FirstPage extends StatelessWidget {
             Navigator.pushNamed(
               context,
               '/second',
-              arguments: 'messeageFromFirstなんですの。',
+              arguments: 'messeageFromFirstですの。',
             );
           },
           child: Text('Next Page'),
@@ -40,7 +55,6 @@ class SecondPage extends StatelessWidget {
   Widget build(BuildContext context) {
     var messageFromFirst = ModalRoute.of(context).settings.arguments;
     print(messageFromFirst);
-
     return Scaffold(
       appBar: AppBar(title: const Text('Second Page')),
       body: Center(
