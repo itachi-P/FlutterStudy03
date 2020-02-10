@@ -25,20 +25,46 @@ class _State extends State<MyApp> {
       body: Column(
         children: <Widget>[
           Image.asset('images/katachi_logo01.png'),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            children: <Widget>[
+              IconButton(
+                icon: Icon(Icons.home),
+                onPressed: () => setState(() => _label = 'home tapped'),
+              ),
+              FlatButton(
+                child: Text('About us'),
+                onPressed: () => setState(() => _label = 'About tapped'),
+              ),
+              FlatButton(
+                child: Text('curriculum'),
+                onPressed: () => setState(() => _label = 'curriculum tapped'),
+              ),
+              FlatButton(
+                child: Text('photos'),
+                onPressed: () => setState(() => _label = 'photos tapped'),
+              ),
+            ],
+          ),
           Image.network(
               'http://goope.akamaized.net/66978/191108172416e7zr_l.jpg'),
-          Text(
-            '汚物は消毒だ〜〜〜！！',
-            textAlign: TextAlign.center,
-            overflow: TextOverflow.ellipsis,
-            style: TextStyle(fontWeight: FontWeight.bold),
-          ),
-          Text(
-            'てめえらの血はなに色だーーーーっ！！',
-            textAlign: TextAlign.center,
-            style: TextStyle(
-                fontStyle: FontStyle.italic,
-                color: Color.fromRGBO(255, 0, 0, 0.5)),
+          Column(
+            children: <Widget>[
+              Text(
+                '汚物は消毒だ〜〜〜！！(▽∀▽)＜炎炎炎炎炎',
+                textAlign: TextAlign.center,
+                overflow: TextOverflow.ellipsis,
+                style: TextStyle(fontWeight: FontWeight.bold),
+              ),
+              Text(
+                'てめえらの血はなに色だーーーーっ！！(# ﾟДﾟ)',
+                textAlign: TextAlign.center,
+                style: TextStyle(
+                    fontSize: 15.0,
+                    fontStyle: FontStyle.italic,
+                    color: Color.fromRGBO(255, 0, 0, 0.8)),
+              ),
+            ],
           ),
           Row(
             children: <Widget>[
@@ -60,21 +86,21 @@ class _State extends State<MyApp> {
           ),
         ],
       ),
+      backgroundColor: Colors.white70,
       persistentFooterButtons: <Widget>[
-        FlatButton(
-          child: Text('Button1'),
-          onPressed: () => setState(() => _label = 'button1 tapped'),
+        Row(
+          children: <Widget>[
+            IconButton(
+              icon: Icon(Icons.mail),
+              onPressed: () => setState(() => _label = 'mail tapped'),
+            ),
+            Text(
+              '©2020 就労移行支援事業所　未来のいたち. All Rights Reserved.',
+              textAlign: TextAlign.center,
+              style: TextStyle(fontSize: 10.0),
+            ),
+          ],
         ),
-        IconButton(
-          icon: Icon(Icons.map),
-          onPressed: () => setState(() => _label = 'map tapped'),
-        ),
-        IconButton(
-          icon: Icon(Icons.mail),
-          onPressed: () => setState(() => _label = 'mail tapped'),
-        ),
-        Text('©2020 就労移行支援事業所　未来のかたち. All Rights Reserved.',
-            textAlign: TextAlign.center, style: TextStyle(fontSize: 10.0)),
       ],
     );
   }

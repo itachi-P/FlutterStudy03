@@ -14,7 +14,10 @@ class _Footer extends State {
       children: <Widget>[
         Text('Deliver features faster'),
         Text('Craft beautiful UIs'),
-        Text('©2020 就労移行支援事業所　未来のかたち. All Rights Reserved.'),
+        Text(
+          '©2020 就労移行支援事業所　未来のかたち. All Rights Reserved.',
+          style: TextStyle(fontSize: 12.0),
+        ),
       ],
     );
   }
