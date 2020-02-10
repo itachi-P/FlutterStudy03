@@ -1,108 +1,104 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:katachi_hp_01/header.dart';
 
-void main() => runApp(
-      MaterialApp(
-        debugShowCheckedModeBanner: false,
-        home: MyApp(),
-      ),
-    );
-
-class MyApp extends StatefulWidget {
-  @override
-  State<StatefulWidget> createState() {
-    return _State();
-  }
+void main() {
+  debugPaintSizeEnabled = false;
+  runApp(
+    MaterialApp(
+      debugShowCheckedModeBanner: false,
+      home: MyApp(),
+    ),
+  );
 }
 
-class _State extends State<MyApp> {
-  var _label = '';
-
+class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: Header(), // 外部ファイル化したヘッダーWidget（のインスタンス）を指定
-      body: Column(
-        children: <Widget>[
-          Image.asset('images/katachi_logo01.png'),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+    return MaterialApp(
+      title: 'Katachi HP clone',
+      home: Scaffold(
+        body: Center(
+          child: Column(
             children: <Widget>[
-              IconButton(
-                icon: Icon(Icons.home),
-                onPressed: () => setState(() => _label = 'home tapped'),
+              Header(), // 外部ファイル化したヘッダーWidget（のインスタンス）を指定
+              Image.asset('images/katachi_ga.jpg'),
+              Container(
+                color: Colors.blue,
+                width: 400.0,
+                height: 160.0,
+                //alignment: ,
+                padding: const EdgeInsets.all(15.0),
+                margin: const EdgeInsets.all(8.0),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  children: <Widget>[
+                    Text(
+                      '-就労移行支援事業所「未来のはまち」-',
+                      style: TextStyle(
+                        fontSize: 15.0,
+                        color: Colors.white,
+                      ),
+                    ),
+                    Text(
+                      '経験ゼロのオマエをIT就労できる人材に躾けます',
+                      style: TextStyle(
+                        fontSize: 15.0,
+                        color: Colors.white,
+                      ),
+                    ),
+                    Text(
+                      'オマエに必要なのは『隷属』だけ！！',
+                      style: TextStyle(
+                        fontSize: 15.0,
+                        color: Colors.white,
+                      ),
+                    ),
+                  ],
+                ),
               ),
-              FlatButton(
-                child: Text('About us'),
-                onPressed: () => setState(() => _label = 'About tapped'),
+              Container(
+                color: Colors.white,
+                width: 400.0,
+                height: 200.0,
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceAround,
+                  children: <Widget>[
+                    Container(
+                      child: Image.asset(
+                        'images/katachi_row01.png',
+                        width: 150.0,
+                      ),
+                    ),
+                    Container(
+                      child: Image.asset(
+                        'images/katachi_row02.png',
+                        width: 150.0,
+                      ),
+                    ),
+                  ],
+                ),
               ),
-              FlatButton(
-                child: Text('curriculum'),
-                onPressed: () => setState(() => _label = 'curriculum tapped'),
-              ),
-              FlatButton(
-                child: Text('photos'),
-                onPressed: () => setState(() => _label = 'photos tapped'),
+              Container(
+                color: Colors.blue,
+                width: 400.0,
+                height: 100.0,
+                padding: const EdgeInsets.all(20.0),
+                margin: const EdgeInsets.all(10.0),
+                // alignment: ,
+                child: Text(
+                  '©2020 就労移行支援事業所　未来のかたち. All Rights Reserved.',
+                  style: TextStyle(
+                    fontSize: 10.0,
+                    color: Colors.white,
+                  ),
+                ),
               ),
             ],
           ),
-          Image.network(
-              'http://goope.akamaized.net/66978/191108172416e7zr_l.jpg'),
-          Column(
-            children: <Widget>[
-              Text(
-                '汚物は消毒だ〜〜〜！！(▽∀▽)＜炎炎炎炎炎',
-                textAlign: TextAlign.center,
-                overflow: TextOverflow.ellipsis,
-                style: TextStyle(fontWeight: FontWeight.bold),
-              ),
-              Text(
-                'てめえらの血はなに色だーーーーっ！！(# ﾟДﾟ)',
-                textAlign: TextAlign.center,
-                style: TextStyle(
-                    fontSize: 15.0,
-                    fontStyle: FontStyle.italic,
-                    color: Color.fromRGBO(255, 0, 0, 0.8)),
-              ),
-            ],
-          ),
-          Row(
-            children: <Widget>[
-              Expanded(
-                child: Image.asset('images/katachi_row01.png'),
-              ),
-              Expanded(
-                child: Image.asset('images/katachi_row02.png'),
-              ),
-              Expanded(
-                child: Image.asset('images/katachi_row03.png'),
-              ),
-            ],
-          ),
-          Expanded(
-            child: Center(
-              child: Text(_label, style: TextStyle(fontSize: 20.0)),
-            ),
-          ),
-        ],
-      ),
-      backgroundColor: Colors.white70,
-      persistentFooterButtons: <Widget>[
-        Row(
-          children: <Widget>[
-            IconButton(
-              icon: Icon(Icons.mail),
-              onPressed: () => setState(() => _label = 'mail tapped'),
-            ),
-            Text(
-              '©2020 就労移行支援事業所　未来のいたち. All Rights Reserved.',
-              textAlign: TextAlign.center,
-              style: TextStyle(fontSize: 10.0),
-            ),
-          ],
         ),
-      ],
+      ),
     );
   }
 }
