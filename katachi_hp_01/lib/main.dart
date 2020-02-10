@@ -4,7 +4,7 @@ import 'package:flutter/rendering.dart';
 import 'package:katachi_hp_01/header.dart';
 
 void main() {
-  debugPaintSizeEnabled = false;
+  //debugPaintSizeEnabled = true;
   runApp(
     MaterialApp(
       debugShowCheckedModeBanner: false,
@@ -23,16 +23,18 @@ class MyApp extends StatelessWidget {
           child: Column(
             children: <Widget>[
               Header(), // 外部ファイル化したヘッダーWidget（のインスタンス）を指定
-              Image.asset('images/katachi_ga.jpg'),
+              Image.network(
+                  'http://goope.akamaized.net/66978/191108172416e7zr_l.jpg'),
               Container(
                 color: Colors.blue,
                 width: 400.0,
                 height: 160.0,
-                //alignment: ,
+                alignment: Alignment.center,
                 padding: const EdgeInsets.all(15.0),
                 margin: const EdgeInsets.all(8.0),
                 child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.center,
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  //crossAxisAlignment: CrossAxisAlignment.center,
                   children: <Widget>[
                     Text(
                       '-就労移行支援事業所「未来のはまち」-',
@@ -83,12 +85,12 @@ class MyApp extends StatelessWidget {
               Container(
                 color: Colors.blue,
                 width: 400.0,
-                height: 100.0,
-                padding: const EdgeInsets.all(20.0),
-                margin: const EdgeInsets.all(10.0),
-                // alignment: ,
+                height: 80.0,
+                alignment: Alignment.center,
+                padding: const EdgeInsets.all(10.0),
+                margin: const EdgeInsets.all(8.0),
                 child: Text(
-                  '©2020 就労移行支援事業所　未来のかたち. All Rights Reserved.',
+                  '©2020 就労移行支援事業所　未来のいたち. All Rights Reserved.',
                   style: TextStyle(
                     fontSize: 10.0,
                     color: Colors.white,
