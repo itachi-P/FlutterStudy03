@@ -19,8 +19,8 @@ class Header extends StatelessWidget with PreferredSizeWidget {
         Padding(
           padding: const EdgeInsets.all(8.0),
           child: Icon(
-            Icons.favorite,
-            color: Colors.pink,
+            Icons.audiotrack,
+            color: Colors.lightGreenAccent,
             size: 24.0,
             semanticLabel: 'Text to announce in accessibility modes',
           ),
