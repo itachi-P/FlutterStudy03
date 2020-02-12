@@ -40,17 +40,32 @@ class MyApp extends StatelessWidget {
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.center,
                   crossAxisAlignment: CrossAxisAlignment.center,
-                  child:Text(
-                      '-就労移行支援事業所「未来のはまち」-\n経験ゼロのオマエをIT就労できる人材に躾けます\nオマエに必要なのは『隷属』だけ！！',
+                  children: <Widget>[
+                    Text(
+                      '-就労移行支援事業所「未来のはまち」-',
                       style: TextStyle(
                         fontSize: 13.0,
-                        height:1.7, //これ追加
                         fontWeight: FontWeight.bold,
                         color: Colors.white,
-                        
                       ),
                     ),
-                    
+                    Text(
+                      '経験ゼロのオマエをIT就労できる人材に躾けます',
+                      style: TextStyle(
+                        fontSize: 13.0,
+                        fontWeight: FontWeight.bold,
+                        color: Colors.white,
+                      ),
+                    ),
+                    Text(
+                      'オマエに必要なのは『隷属』だけ！！',
+                      style: TextStyle(
+                        fontSize: 13.0,
+                        fontWeight: FontWeight.bold,
+                        color: Colors.white,
+                      ),
+                    ),
+                  ],
                 ),
               ),
               Container(
