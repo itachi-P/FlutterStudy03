@@ -19,7 +19,7 @@ My first Flutter App on MacOS both Android and iOS.<br>
 
 Using an external open-source package named 'english_words', which contains a few thousand of the most used English words, and it's provides some useful utility functions.
 
-~2/4 Step1~4 (Flutter official page by Google "Write your first Flutter app, part 1")[https://flutter.dev/docs/get-started/codelab] 
+2/4 Step1~4 (Flutter official page by Google "Write your first Flutter app, part 1")[https://flutter.dev/docs/get-started/codelab] 
 
 ### What I learned in this codelab:
 - Created a Flutter app from the ground up.
