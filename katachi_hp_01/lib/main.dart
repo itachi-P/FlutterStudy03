@@ -4,7 +4,7 @@ import 'package:flutter/rendering.dart';
 import 'package:katachi_hp_01/header.dart';
 
 void main() {
-  debugPaintSizeEnabled = true;
+  //debugPaintSizeEnabled = true;
   runApp(
     MaterialApp(
       debugShowCheckedModeBanner: false,
@@ -42,26 +42,11 @@ class MyApp extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: <Widget>[
                     Text(
-                      '-就労移行支援事業所「未来のはまち」-',
+                      '-就労移行支援事業所「未来のはまち」-\n経験ゼロのオマエをIT就労できる人材に躾けます\nオマエに必要なのは『隷属』だけ！！',
                       style: TextStyle(
                         fontSize: 13.0,
                         fontWeight: FontWeight.bold,
-                        color: Colors.white,
-                      ),
-                    ),
-                    Text(
-                      '経験ゼロのオマエをIT就労できる人材に躾けます',
-                      style: TextStyle(
-                        fontSize: 13.0,
-                        fontWeight: FontWeight.bold,
-                        color: Colors.white,
-                      ),
-                    ),
-                    Text(
-                      'オマエに必要なのは『隷属』だけ！！',
-                      style: TextStyle(
-                        fontSize: 13.0,
-                        fontWeight: FontWeight.bold,
+                        height: 1.7,
                         color: Colors.white,
                       ),
                     ),
