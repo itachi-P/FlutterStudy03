@@ -25,7 +25,7 @@ class MyApp extends StatelessWidget {
               Header(), // 外部ファイル化したヘッダーWidget（のインスタンス）を指定
               Container(
                 width: 400,
-                //height: 200.0,
+                //height: 150.0,
                 padding: EdgeInsets.fromLTRB(10.0, 0, 10.0, 0),
                 child: Image.network(
                     'http://goope.akamaized.net/66978/191108172416e7zr_l.jpg'),
@@ -39,7 +39,7 @@ class MyApp extends StatelessWidget {
                 margin: const EdgeInsets.all(8.0),
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.center,
-                  //crossAxisAlignment: CrossAxisAlignment.center,
+                  crossAxisAlignment: CrossAxisAlignment.center,
                   children: <Widget>[
                     Text(
                       '-就労移行支援事業所「未来のはまち」-',
@@ -101,6 +101,7 @@ class MyApp extends StatelessWidget {
                   '©2020 就労移行支援事業所　未来のいたち. All Rights Reserved.',
                   style: TextStyle(
                     fontSize: 10.0,
+                    fontWeight: FontWeight.bold,
                     color: Colors.white,
                   ),
                 ),
