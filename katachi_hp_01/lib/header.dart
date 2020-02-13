@@ -1,7 +1,16 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
-class HeaderState extends State<Header> {
+class _HeaderState extends State<Header> {
+  int _sel_menu_num = 0;
+
+  // TODO
+  void selectMenu() {
+    setState(() {
+      this._sel_menu_num = _sel_menu_num;
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     // TODO: implement build
@@ -22,7 +31,7 @@ class HeaderState extends State<Header> {
             size: 40,
             color: Color.fromARGB(500, 0, 0, 200),
           ),
-          //onPressed: () => setXXXX, // TODO setState()の実装
+          //onPressed: , // TODO setState()の実装
         ),
       ],
     ); //TODO 仮。最終的には実装したWidgetクラスを返す
@@ -31,5 +40,5 @@ class HeaderState extends State<Header> {
 
 class Header extends StatefulWidget {
   @override
-  HeaderState createState() => new HeaderState();
+  _HeaderState createState() => new _HeaderState();
 }
