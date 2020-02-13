@@ -1,21 +1,27 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+
+class Header extends StatelessWidget with PreferredSizeWidget {
+  @override
+  Size get preferredSize => Size.fromHeight(kToolbarHeight);
+/*  createState() => new _HeaderState();
+}
 
 class _HeaderState extends State<Header> {
   int _sel_menu_num = 0;
-
   // TODO
   void selectMenu() {
     setState(() {
       this._sel_menu_num = _sel_menu_num;
     });
   }
-
+*/
   @override
   Widget build(BuildContext context) {
-    // TODO: implement build
     return AppBar(
       backgroundColor: Colors.white,
+      //leading: Padding(
+      //       padding: const EdgeInsets.all(8.0),
+      //       child: IconButton(icon: Icons.favorite_border, onPressed: () async {  },),
       title: Image.asset(
         'images/katachi_logo01.png',
         height: 30.0,
@@ -31,14 +37,8 @@ class _HeaderState extends State<Header> {
             size: 40,
             color: Color.fromARGB(500, 0, 0, 200),
           ),
-          //onPressed: , // TODO setState()の実装
         ),
       ],
-    ); //TODO 仮。最終的には実装したWidgetクラスを返す
+    );
   }
-}
-
-class Header extends StatefulWidget {
-  @override
-  _HeaderState createState() => new _HeaderState();
 }

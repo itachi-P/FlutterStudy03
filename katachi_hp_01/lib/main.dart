@@ -1,28 +1,25 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
+import 'package:katachi_hp_01/footer.dart';
 import 'package:katachi_hp_01/header.dart';
 
 void main() {
-  //debugPaintSizeEnabled = true;
-  runApp(
-    MaterialApp(
-      debugShowCheckedModeBanner: false,
-      home: MyApp(),
-    ),
-  );
+  debugPaintSizeEnabled = true;
+  runApp(MyApp());
 }
 
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Katachi HP clone',
+      debugShowCheckedModeBanner: false,
+      title: 'Katachi HP clone 02',
       home: Scaffold(
+        appBar: Header(),
         body: Center(
           child: Column(
             children: <Widget>[
-              Header(), // 外部ファイル化したヘッダーWidget（のインスタンス）を指定
+              //Header(), // 外部ファイル化したヘッダーWidget（のインスタンス）を指定
               Container(
                 width: 400,
                 //height: 150.0,
@@ -75,25 +72,10 @@ class MyApp extends StatelessWidget {
                   ],
                 ),
               ),
-              Container(
-                color: Colors.blue,
-                width: 400.0,
-                height: 80.0,
-                alignment: Alignment.center,
-                padding: const EdgeInsets.all(10.0),
-                margin: const EdgeInsets.all(8.0),
-                child: Text(
-                  '©2020 就労移行支援事業所　未来のいたち. All Rights Reserved.',
-                  style: TextStyle(
-                    fontSize: 10.0,
-                    fontWeight: FontWeight.bold,
-                    color: Colors.white,
-                  ),
-                ),
-              ),
             ],
           ),
         ),
+        bottomNavigationBar: Footer(),
       ),
     );
   }
