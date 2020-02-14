@@ -21,20 +21,30 @@ class _Footer extends State {
   @override
   Widget build(BuildContext context) {
     return BottomNavigationBar(
+        backgroundColor: Colors.blue,
         items: const <BottomNavigationBarItem>[
           BottomNavigationBarItem(
-            icon: Icon(Icons.home),
+            icon: Icon(
+              Icons.home,
+              color: Colors.white,
+            ),
             title: Text('HOME', style: optionStyle),
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.mail_outline),
+            icon: Icon(
+              Icons.mail_outline,
+              color: Colors.white,
+            ),
             title: Text(
               'CONTACT',
               style: optionStyle,
             ),
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.person),
+            icon: Icon(
+              Icons.person,
+              color: Colors.white,
+            ),
             title: Text(
               'LOGIN',
               style: optionStyle,

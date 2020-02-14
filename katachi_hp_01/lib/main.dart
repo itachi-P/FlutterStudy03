@@ -2,20 +2,60 @@ import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:katachi_hp_01/footer.dart';
 
-void main() {
-  debugPaintSizeEnabled = true;
-  runApp(
-    MaterialApp(
-      debugShowCheckedModeBanner: false,
-      home: MyApp(),
-    ),
-  );
-}
-
 class MyApp extends StatefulWidget {
   @override
   State<StatefulWidget> createState() {
     return _State();
+  }
+}
+
+void main() {
+  //debugPaintSizeEnabled = true;
+  runApp(
+    MaterialApp(
+      debugShowCheckedModeBanner: false,
+      initialRoute: '/',
+      //home: MyApp(),
+      routes: <String, WidgetBuilder>{
+        '/': (BuildContext context) => new MyApp(),
+        '/contact_page': (BuildContext context) => new Contact(),
+      },
+    ),
+  );
+}
+
+class Contact extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text('Contact Page'),
+      ),
+      body: Center(
+        child: RaisedButton(
+          onPressed: () {
+            Navigator.popAndPushNamed(context, '/contact_page');
+          },
+          child: Text('BACK'),
+        ),
+      ),
+      drawer: Drawer(
+        child: ListView(
+          children: <Widget>[
+            DrawerHeader(
+              child: Text('This is Drawer Header.'),
+              decoration: BoxDecoration(
+                gradient: new LinearGradient(
+                  colors: [Colors.blue, const Color(0x0000CCFF)],
+                  begin: Alignment.topCenter,
+                  end: Alignment.bottomCenter,
+                ),
+              ),
+            ),
+          ],
+        ),
+      ),
+    );
   }
 }
 
@@ -35,17 +75,23 @@ class _State extends State<MyApp> {
         flexibleSpace: Container(
           decoration: new BoxDecoration(
             gradient: new LinearGradient(
-                colors: [
-                  const Color(0xFF3366FF),
-                  const Color(0x0000CCFF),
-                ],
-                begin: const FractionalOffset(1.0, 0.0),
+                colors: [Colors.white, const Color(0xFF3366FF)],
+                begin: const FractionalOffset(0.0, 1.0),
                 end: const FractionalOffset(0.0, 0.0),
                 stops: [0.0, 1.0],
                 tileMode: TileMode.clamp),
           ),
         ),
-        actions: <Widget>[],
+        actions: <Widget>[
+          IconButton(
+            icon: const Icon(Icons.menu),
+            iconSize: 35.0,
+            tooltip: 'Show menu',
+            onPressed: () {
+              Navigator.of(context).pushNamed('/contact_page');
+            },
+          )
+        ],
       ),
       drawer: Theme(
         data: Theme.of(context).copyWith(
@@ -78,6 +124,7 @@ class _State extends State<MyApp> {
                   ),
                 ),
                 onTap: () {
+                  //Navigator.pushNamed(context, 'contact_page');
                   setState(() => _selected = 'CONTACT');
                   Navigator.pop(context);
                 },
@@ -157,11 +204,16 @@ class _State extends State<MyApp> {
               ),
             ),
             Container(
-              child: Text(
-                _selected,
-                style: TextStyle(
-                  fontSize: 32,
+              child: RaisedButton(
+                child: Text(
+                  _selected,
+                  style: TextStyle(
+                    fontSize: 32,
+                  ),
                 ),
+                onPressed: () {
+                  Navigator.of(context).pushNamed(_selected);
+                },
               ),
             ),
           ],
