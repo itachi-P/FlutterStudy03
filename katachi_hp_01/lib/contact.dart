@@ -10,7 +10,7 @@ class Contact extends StatelessWidget {
       body: Center(
         child: RaisedButton(
           onPressed: () {
-            //Navigator.of(context).canPop(); // true or false TODO
+            //Navigator.of(context).canPop(); // true or false
             Navigator.popUntil(context, ModalRoute.withName("/"));
           },
           child: Text('BACK'),
@@ -28,6 +28,32 @@ class Contact extends StatelessWidget {
                   end: Alignment.bottomCenter,
                 ),
               ),
+            ),
+            ListTile(
+              title: Text(
+                'ListTile01: Back to start page',
+                style: TextStyle(
+                  fontWeight: FontWeight.bold,
+                  fontSize: 20,
+                  color: Colors.amber,
+                ),
+              ),
+              onTap: () {
+                Navigator.pushNamed(context, '/');
+              },
+            ),
+            ListTile(
+              title: Text(
+                'ListTile02: Go home!',
+                style: TextStyle(
+                  fontWeight: FontWeight.bold,
+                  fontSize: 20,
+                  color: Colors.greenAccent,
+                ),
+              ),
+              onTap: () {
+                Navigator.pushNamed(context, '/home');
+              },
             ),
           ],
         ),
