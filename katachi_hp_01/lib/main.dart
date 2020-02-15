@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
+import 'package:katachi_hp_01/contact.dart';
 import 'package:katachi_hp_01/footer.dart';
+import 'package:katachi_hp_01/home.dart';
 
 class MyApp extends StatefulWidget {
   @override
@@ -10,7 +12,7 @@ class MyApp extends StatefulWidget {
 }
 
 void main() {
-  //debugPaintSizeEnabled = true;
+  debugPaintSizeEnabled = true;
   runApp(
     MaterialApp(
       debugShowCheckedModeBanner: false,
@@ -18,12 +20,14 @@ void main() {
       //home: MyApp(),
       routes: <String, WidgetBuilder>{
         '/': (BuildContext context) => new MyApp(),
+        '/home': (BuildContext context) => new Home(),
         '/contact_page': (BuildContext context) => new Contact(),
       },
     ),
   );
 }
 
+/*
 class Contact extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -58,6 +62,7 @@ class Contact extends StatelessWidget {
     );
   }
 }
+ */
 
 class _State extends State<MyApp> {
   var _selected = '';
@@ -110,7 +115,7 @@ class _State extends State<MyApp> {
                   ),
                 ),
                 onTap: () {
-                  setState(() => _selected = 'HOME');
+                  setState(() => _selected = '/home');
                   Navigator.pop(context);
                 },
               ),
@@ -125,7 +130,7 @@ class _State extends State<MyApp> {
                 ),
                 onTap: () {
                   //Navigator.pushNamed(context, 'contact_page');
-                  setState(() => _selected = 'CONTACT');
+                  setState(() => _selected = '/contact_page');
                   Navigator.pop(context);
                 },
               ),
@@ -139,7 +144,7 @@ class _State extends State<MyApp> {
                   ),
                 ),
                 onTap: () {
-                  setState(() => _selected = 'LOGIN');
+                  setState(() => _selected = 'Login');
                   Navigator.pop(context);
                 },
               ),

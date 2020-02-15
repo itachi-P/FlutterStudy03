@@ -10,8 +10,8 @@ class Contact extends StatelessWidget {
       body: Center(
         child: RaisedButton(
           onPressed: () {
-            //Navigator.popUntil(context, ModalRoute.withName("/"));
-            Navigator.pop(context);
+            //Navigator.of(context).canPop(); // true or false TODO
+            Navigator.popUntil(context, ModalRoute.withName("/"));
           },
           child: Text('BACK'),
         ),
