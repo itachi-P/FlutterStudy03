@@ -18,8 +18,21 @@ class RightMenu extends StatelessWidget {
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: <Widget>[
+                    GestureDetector(
+                      onTap: () {
+                        Navigator.pop(context);
+                      },
+                      child: Text(
+                        'HOME',
+                        textAlign: TextAlign.center,
+                        style: TextStyle(
+                            color: Colors.white,
+                            fontSize: 20,
+                            fontWeight: FontWeight.bold),
+                      ),
+                    ),
                     Text(
-                      'HOME',
+                      'CONTACT(no tap event)',
                       textAlign: TextAlign.center,
                       style: TextStyle(
                           color: Colors.white,
@@ -27,15 +40,7 @@ class RightMenu extends StatelessWidget {
                           fontWeight: FontWeight.bold),
                     ),
                     Text(
-                      'CONTACT',
-                      textAlign: TextAlign.center,
-                      style: TextStyle(
-                          color: Colors.white,
-                          fontSize: 20,
-                          fontWeight: FontWeight.bold),
-                    ),
-                    Text(
-                      'LOGIN',
+                      'LOGIN(no tap event)',
                       textAlign: TextAlign.center,
                       style: TextStyle(
                           color: Colors.white,
@@ -49,7 +54,7 @@ class RightMenu extends StatelessWidget {
           ),
           decoration: BoxDecoration(
             gradient: LinearGradient(
-              colors: [Colors.blueAccent, Colors.lightBlueAccent],
+              colors: [Colors.deepPurpleAccent, Colors.lightBlueAccent],
               begin: const FractionalOffset(1.0, 0.0),
               end: const FractionalOffset(0.0, 0.0),
               //stops: [0.0, 1.0],
