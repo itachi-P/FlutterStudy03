@@ -3,6 +3,8 @@ import 'package:flutter/rendering.dart';
 import 'package:katachi_hp_01/contact.dart';
 import 'package:katachi_hp_01/footer.dart';
 import 'package:katachi_hp_01/home.dart';
+import 'package:katachi_hp_01/login.dart';
+import 'package:katachi_hp_01/right_menu.dart';
 
 class MyApp extends StatefulWidget {
   @override
@@ -12,57 +14,22 @@ class MyApp extends StatefulWidget {
 }
 
 void main() {
-  debugPaintSizeEnabled = true;
+  //debugPaintSizeEnabled = true;
   runApp(
     MaterialApp(
       debugShowCheckedModeBanner: false,
       initialRoute: '/',
       //home: MyApp(),
       routes: <String, WidgetBuilder>{
-        '/': (BuildContext context) => new MyApp(),
-        '/home': (BuildContext context) => new Home(),
-        '/contact_page': (BuildContext context) => new Contact(),
+        '/': (BuildContext context) => MyApp(),
+        '/home': (BuildContext context) => Home(),
+        '/contact_page': (BuildContext context) => Contact(),
+        '/login': (BuildContext context) => Login(),
+        '/right_menu': (BuildContext context) => RightMenu(),
       },
     ),
   );
 }
-
-/*
-class Contact extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text('Contact Page'),
-      ),
-      body: Center(
-        child: RaisedButton(
-          onPressed: () {
-            Navigator.popAndPushNamed(context, '/contact_page');
-          },
-          child: Text('BACK'),
-        ),
-      ),
-      drawer: Drawer(
-        child: ListView(
-          children: <Widget>[
-            DrawerHeader(
-              child: Text('This is Drawer Header.'),
-              decoration: BoxDecoration(
-                gradient: new LinearGradient(
-                  colors: [Colors.blue, const Color(0x0000CCFF)],
-                  begin: Alignment.topCenter,
-                  end: Alignment.bottomCenter,
-                ),
-              ),
-            ),
-          ],
-        ),
-      ),
-    );
-  }
-}
- */
 
 class _State extends State<MyApp> {
   var _selected = '';
@@ -78,8 +45,8 @@ class _State extends State<MyApp> {
           fit: BoxFit.contain,
         ),
         flexibleSpace: Container(
-          decoration: new BoxDecoration(
-            gradient: new LinearGradient(
+          decoration: BoxDecoration(
+            gradient: LinearGradient(
                 colors: [Colors.white, const Color(0xFF3366FF)],
                 begin: const FractionalOffset(0.0, 1.0),
                 end: const FractionalOffset(0.0, 0.0),
@@ -93,7 +60,7 @@ class _State extends State<MyApp> {
             iconSize: 35.0,
             tooltip: 'Show menu',
             onPressed: () {
-              Navigator.of(context).pushNamed('/contact_page');
+              Navigator.of(context).pushNamed('/right_menu');
             },
           )
         ],
@@ -129,7 +96,7 @@ class _State extends State<MyApp> {
                   ),
                 ),
                 onTap: () {
-                  //Navigator.pushNamed(context, 'contact_page');
+                  //Navigator.popAndPushNamed(context, '/contact_page');
                   setState(() => _selected = '/contact_page');
                   Navigator.pop(context);
                 },
@@ -144,7 +111,7 @@ class _State extends State<MyApp> {
                   ),
                 ),
                 onTap: () {
-                  setState(() => _selected = 'Login');
+                  setState(() => _selected = '/login');
                   Navigator.pop(context);
                 },
               ),

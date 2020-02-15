@@ -6,7 +6,10 @@ class Home extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: Text('This is Home'),
-        actions: <Widget>[IconButton(icon: Icon(Icons.menu), onPressed: null)],
+        actions: <Widget>[
+          IconButton(icon: Icon(Icons.menu), onPressed: null // TODO
+              )
+        ],
       ),
       body: Container(
         width: 300.0,

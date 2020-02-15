@@ -22,7 +22,7 @@ class Contact extends StatelessWidget {
             DrawerHeader(
               child: Text('This is Drawer Header.'),
               decoration: BoxDecoration(
-                gradient: new LinearGradient(
+                gradient: LinearGradient(
                   colors: [Colors.blue, const Color(0x0000CCFF)],
                   begin: Alignment.topCenter,
                   end: Alignment.bottomCenter,
