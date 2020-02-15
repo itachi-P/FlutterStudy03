@@ -37,6 +37,10 @@ class _HeaderState extends State<Header> {
             size: 40,
             color: Color.fromARGB(500, 0, 0, 200),
           ),
+          onPressed: () {
+            // TODO
+            print("This menu is dummy yet.");
+          },
         ),
       ],
     );

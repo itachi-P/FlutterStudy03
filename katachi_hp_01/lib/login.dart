@@ -65,7 +65,13 @@ class Login extends StatelessWidget {
         title: Text('Login page'),
       ),
       body: Center(
-        child: Text('This is authentication page.'),
+        child: Text(
+          'This is authentication page.',
+          style: TextStyle(
+            fontSize: 25,
+            decorationStyle: TextDecorationStyle.dashed,
+          ),
+        ),
       ),
     );
   }

@@ -15,7 +15,7 @@ class Home extends StatelessWidget {
             ),
             onPressed: () {
               // TODO
-              print("This menu is dammy.");
+              print("This menu is dummy.");
             },
           ),
         ],
