@@ -18,28 +18,34 @@ class _HeaderState extends State<Header> {
   @override
   Widget build(BuildContext context) {
     return AppBar(
-      backgroundColor: Colors.white,
-      //leading: Padding(
-      //       padding: const EdgeInsets.all(8.0),
-      //       child: IconButton(icon: Icons.favorite_border, onPressed: () async {  },),
+      backgroundColor: Colors.blue,
       title: Image.asset(
         'images/katachi_logo01.png',
         height: 30.0,
         width: 200.0,
         fit: BoxFit.contain,
       ),
-      //iconTheme: const IconThemeData.fallback()
-      //    .copyWith(color: Color.fromRGBO(200, 0, 200, 0.1)),
+      flexibleSpace: Container(
+        decoration: BoxDecoration(
+          gradient: LinearGradient(
+              colors: [Colors.white, const Color(0xFF3366FF)],
+              begin: const FractionalOffset(0.0, 1.0),
+              end: const FractionalOffset(0.0, 0.0),
+              stops: [0.0, 1.0],
+              tileMode: TileMode.clamp),
+        ),
+      ),
       actions: <Widget>[
         IconButton(
-          icon: Icon(
+          icon: const Icon(
             Icons.menu,
             size: 40,
-            color: Color.fromARGB(500, 0, 0, 200),
           ),
+          iconSize: 35.0,
+          color: Color.fromARGB(500, 0, 0, 200),
+          tooltip: 'Show menu',
           onPressed: () {
-            // TODO
-            print("This menu is dummy yet.");
+            Navigator.of(context).pushNamed('/right_menu');
           },
         ),
       ],

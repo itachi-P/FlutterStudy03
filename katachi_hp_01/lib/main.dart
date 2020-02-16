@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:katachi_hp_01/contact.dart';
 import 'package:katachi_hp_01/footer.dart';
+import 'package:katachi_hp_01/header.dart';
 import 'package:katachi_hp_01/home.dart';
 import 'package:katachi_hp_01/login.dart';
 import 'package:katachi_hp_01/right_menu.dart';
@@ -32,39 +33,12 @@ void main() {
 }
 
 class _State extends State<MyApp> {
-  var _selected = '';
+  //var _selected = '';
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Image.asset(
-          'images/katachi_logo01.png',
-          height: 30.0,
-          width: 200.0,
-          fit: BoxFit.contain,
-        ),
-        flexibleSpace: Container(
-          decoration: BoxDecoration(
-            gradient: LinearGradient(
-                colors: [Colors.white, const Color(0xFF3366FF)],
-                begin: const FractionalOffset(0.0, 1.0),
-                end: const FractionalOffset(0.0, 0.0),
-                stops: [0.0, 1.0],
-                tileMode: TileMode.clamp),
-          ),
-        ),
-        actions: <Widget>[
-          IconButton(
-            icon: const Icon(Icons.menu),
-            iconSize: 35.0,
-            tooltip: 'Show menu',
-            onPressed: () {
-              Navigator.of(context).pushNamed('/right_menu');
-            },
-          )
-        ],
-      ),
+      appBar: Header(),
       drawer: Theme(
         data: Theme.of(context).copyWith(
           canvasColor: Colors.blue, //This will change the drawer background
@@ -82,8 +56,8 @@ class _State extends State<MyApp> {
                   ),
                 ),
                 onTap: () {
-                  setState(() => _selected = '/home');
-                  Navigator.popAndPushNamed(context, _selected);
+                  //setState(() => _selected = '/home');
+                  Navigator.popAndPushNamed(context, '/home');
                 },
               ),
               ListTile(
@@ -96,8 +70,8 @@ class _State extends State<MyApp> {
                   ),
                 ),
                 onTap: () {
-                  setState(() => _selected = '/contact_page');
-                  Navigator.popAndPushNamed(context, _selected);
+                  //setState(() => _selected = '/contact_page');
+                  Navigator.popAndPushNamed(context, '/contact_page');
                 },
               ),
               ListTile(
@@ -110,15 +84,14 @@ class _State extends State<MyApp> {
                   ),
                 ),
                 onTap: () {
-                  setState(() => _selected = '/login');
-                  Navigator.popAndPushNamed(context, _selected);
+                  //setState(() => _selected = '/login');
+                  Navigator.popAndPushNamed(context, '/login');
                 },
               ),
             ],
           ),
         ),
       ),
-
       body: Center(
         child: Column(
           children: <Widget>[
@@ -177,7 +150,7 @@ class _State extends State<MyApp> {
           ],
         ),
       ),
-      bottomNavigationBar: Footer(), // TODO
+      bottomNavigationBar: Footer(),
     );
   }
 }
