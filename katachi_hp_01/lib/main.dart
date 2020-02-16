@@ -83,7 +83,7 @@ class _State extends State<MyApp> {
                 ),
                 onTap: () {
                   setState(() => _selected = '/home');
-                  Navigator.pop(context);
+                  Navigator.popAndPushNamed(context, _selected);
                 },
               ),
               ListTile(
@@ -96,9 +96,8 @@ class _State extends State<MyApp> {
                   ),
                 ),
                 onTap: () {
-                  //Navigator.popAndPushNamed(context, '/contact_page');
                   setState(() => _selected = '/contact_page');
-                  Navigator.pop(context);
+                  Navigator.popAndPushNamed(context, _selected);
                 },
               ),
               ListTile(
@@ -112,7 +111,7 @@ class _State extends State<MyApp> {
                 ),
                 onTap: () {
                   setState(() => _selected = '/login');
-                  Navigator.pop(context);
+                  Navigator.popAndPushNamed(context, _selected);
                 },
               ),
             ],
@@ -173,19 +172,6 @@ class _State extends State<MyApp> {
                     ),
                   ),
                 ],
-              ),
-            ),
-            Container(
-              child: RaisedButton(
-                child: Text(
-                  _selected,
-                  style: TextStyle(
-                    fontSize: 32,
-                  ),
-                ),
-                onPressed: () {
-                  Navigator.of(context).pushNamed(_selected);
-                },
               ),
             ),
           ],

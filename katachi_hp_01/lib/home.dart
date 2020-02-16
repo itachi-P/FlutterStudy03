@@ -35,7 +35,7 @@ class Home extends StatelessWidget {
           '今現在実質的なホーム画面である'
           '初期画面からHeaderとFooterだけを共通部分として残し、'
           'メインのbody部分はメニュー選択によって入れ替わる静的画面の1つとして'
-          'このページ(home.dart/Homeクラス)に持ってきたい',
+          'このページ(home.dart/Homeクラス)に分離したいところ',
           style: TextStyle(
             fontSize: 16,
           ),
