@@ -20,39 +20,53 @@ class _Footer extends State {
 
   @override
   Widget build(BuildContext context) {
-    return BottomNavigationBar(
-        backgroundColor: Colors.blue,
-        items: const <BottomNavigationBarItem>[
-          BottomNavigationBarItem(
-            icon: Icon(
-              Icons.home,
-              color: Colors.white,
-            ),
-            title: Text('HOME', style: optionStyle),
+    return Material(
+      color: Colors.red,
+      child: Container(
+        decoration: BoxDecoration(
+          gradient: LinearGradient(
+            colors: [Colors.blue, Colors.pink],
+            begin: Alignment.topCenter,
+            end: Alignment.bottomCenter,
           ),
-          BottomNavigationBarItem(
-            icon: Icon(
-              Icons.mail_outline,
-              color: Colors.white,
+        ),
+        // BottomNavigationBarの背景色がどうしてもグラデーションにできないので変更
+        child: BottomNavigationBar(
+          //backgroundColor: Colors.blue,
+          items: const <BottomNavigationBarItem>[
+            BottomNavigationBarItem(
+              icon: Icon(
+                Icons.home,
+                color: Colors.white,
+              ),
+              title: Text('HOME', style: optionStyle),
             ),
-            title: Text(
-              'CONTACT',
-              style: optionStyle,
+            BottomNavigationBarItem(
+              icon: Icon(
+                Icons.mail_outline,
+                color: Colors.white,
+              ),
+              title: Text(
+                'CONTACT',
+                style: optionStyle,
+              ),
             ),
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(
-              Icons.person,
-              color: Colors.white,
+            BottomNavigationBarItem(
+              icon: Icon(
+                Icons.person,
+                color: Colors.white,
+              ),
+              title: Text(
+                'LOGIN',
+                style: optionStyle,
+              ),
             ),
-            title: Text(
-              'LOGIN',
-              style: optionStyle,
-            ),
-          ),
-        ],
-        currentIndex: _selectedIndex,
-        selectedItemColor: Colors.amber[800],
-        onTap: _onItemTapped);
+          ],
+          currentIndex: _selectedIndex,
+          selectedItemColor: Colors.amber[800],
+          onTap: _onItemTapped,
+        ),
+      ),
+    );
   }
 }
