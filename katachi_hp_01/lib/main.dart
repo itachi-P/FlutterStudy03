@@ -39,59 +39,6 @@ class _State extends State<MyApp> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: Header(),
-      drawer: Theme(
-        data: Theme.of(context).copyWith(
-          canvasColor: Colors.blue, //This will change the drawer background
-        ),
-        child: Drawer(
-          child: ListView(
-            children: <Widget>[
-              ListTile(
-                title: Text(
-                  'HOME',
-                  textAlign: TextAlign.center,
-                  style: TextStyle(
-                    fontSize: 20,
-                    color: Colors.white,
-                  ),
-                ),
-                onTap: () {
-                  //setState(() => _selected = '/home');
-                  Navigator.popAndPushNamed(context, '/home');
-                },
-              ),
-              ListTile(
-                title: Text(
-                  'CONTACT',
-                  textAlign: TextAlign.center,
-                  style: TextStyle(
-                    fontSize: 20,
-                    color: Colors.white,
-                  ),
-                ),
-                onTap: () {
-                  //setState(() => _selected = '/contact_page');
-                  Navigator.popAndPushNamed(context, '/contact_page');
-                },
-              ),
-              ListTile(
-                title: Text(
-                  'LOGIN',
-                  textAlign: TextAlign.center,
-                  style: TextStyle(
-                    fontSize: 20,
-                    color: Colors.white,
-                  ),
-                ),
-                onTap: () {
-                  //setState(() => _selected = '/login');
-                  Navigator.popAndPushNamed(context, '/login');
-                },
-              ),
-            ],
-          ),
-        ),
-      ),
       body: Center(
         child: Column(
           children: <Widget>[

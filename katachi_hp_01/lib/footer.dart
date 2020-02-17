@@ -21,7 +21,7 @@ class _Footer extends State {
   @override
   Widget build(BuildContext context) {
     return Material(
-      color: Colors.red,
+      color: Colors.blueGrey,
       child: Container(
         decoration: BoxDecoration(
           gradient: LinearGradient(
@@ -31,40 +31,46 @@ class _Footer extends State {
           ),
         ),
         // BottomNavigationBarの背景色がどうしてもグラデーションにできないので変更
-        child: BottomNavigationBar(
-          //backgroundColor: Colors.blue,
-          items: const <BottomNavigationBarItem>[
-            BottomNavigationBarItem(
-              icon: Icon(
-                Icons.home,
-                color: Colors.white,
-              ),
-              title: Text('HOME', style: optionStyle),
-            ),
-            BottomNavigationBarItem(
-              icon: Icon(
-                Icons.mail_outline,
-                color: Colors.white,
-              ),
-              title: Text(
-                'CONTACT',
-                style: optionStyle,
-              ),
-            ),
-            BottomNavigationBarItem(
-              icon: Icon(
-                Icons.person,
-                color: Colors.white,
-              ),
-              title: Text(
-                'LOGIN',
-                style: optionStyle,
+        child: Row(
+          children: <Widget>[
+            Expanded(
+              child: BottomNavigationBar(
+                backgroundColor: Colors.blue,
+                items: [
+                  BottomNavigationBarItem(
+                    icon: Icon(
+                      Icons.home,
+                      color: Colors.white,
+                    ),
+                    title: Text('HOME', style: optionStyle),
+                  ),
+                  BottomNavigationBarItem(
+                    icon: Icon(
+                      Icons.mail_outline,
+                      color: Colors.white,
+                    ),
+                    title: Text(
+                      'CONTACT',
+                      style: optionStyle,
+                    ),
+                  ),
+                  BottomNavigationBarItem(
+                    icon: Icon(
+                      Icons.person,
+                      color: Colors.white,
+                    ),
+                    title: Text(
+                      'LOGIN',
+                      style: optionStyle,
+                    ),
+                  ),
+                ],
+                currentIndex: _selectedIndex,
+                onTap: _onItemTapped,
+                selectedItemColor: Colors.amber[800],
               ),
             ),
           ],
-          currentIndex: _selectedIndex,
-          selectedItemColor: Colors.amber[800],
-          onTap: _onItemTapped,
         ),
       ),
     );

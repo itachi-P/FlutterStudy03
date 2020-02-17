@@ -18,13 +18,14 @@ class _HeaderState extends State<Header> {
   @override
   Widget build(BuildContext context) {
     return AppBar(
-      backgroundColor: Colors.blue,
+      backgroundColor: Colors.white,
       title: Image.asset(
         'images/katachi_logo01.png',
         height: 30.0,
         width: 200.0,
         fit: BoxFit.contain,
       ),
+      /*
       flexibleSpace: Container(
         decoration: BoxDecoration(
           gradient: LinearGradient(
@@ -35,6 +36,7 @@ class _HeaderState extends State<Header> {
               tileMode: TileMode.clamp),
         ),
       ),
+       */
       actions: <Widget>[
         IconButton(
           icon: const Icon(

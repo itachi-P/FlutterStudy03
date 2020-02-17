@@ -20,7 +20,7 @@ class RightMenu extends StatelessWidget {
                   children: <Widget>[
                     GestureDetector(
                       onTap: () {
-                        Navigator.pop(context);
+                        Navigator.popAndPushNamed(context, '/home');
                       },
                       child: Text(
                         'HOME',
@@ -31,21 +31,31 @@ class RightMenu extends StatelessWidget {
                             fontWeight: FontWeight.bold),
                       ),
                     ),
-                    Text(
-                      'CONTACT(no tap event)',
-                      textAlign: TextAlign.center,
-                      style: TextStyle(
-                          color: Colors.white,
-                          fontSize: 20,
-                          fontWeight: FontWeight.bold),
+                    GestureDetector(
+                      onTap: () {
+                        Navigator.popAndPushNamed(context, '/contact_page');
+                      },
+                      child: Text(
+                        'CONTACT',
+                        textAlign: TextAlign.center,
+                        style: TextStyle(
+                            color: Colors.white,
+                            fontSize: 20,
+                            fontWeight: FontWeight.bold),
+                      ),
                     ),
-                    Text(
-                      'LOGIN(no tap event)',
-                      textAlign: TextAlign.center,
-                      style: TextStyle(
-                          color: Colors.white,
-                          fontSize: 20,
-                          fontWeight: FontWeight.bold),
+                    GestureDetector(
+                      onTap: () {
+                        Navigator.popAndPushNamed(context, '/login');
+                      },
+                      child: Text(
+                        'LOGIN',
+                        textAlign: TextAlign.center,
+                        style: TextStyle(
+                            color: Colors.white,
+                            fontSize: 20,
+                            fontWeight: FontWeight.bold),
+                      ),
                     ),
                   ],
                 ),
