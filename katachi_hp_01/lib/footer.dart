@@ -9,8 +9,8 @@ class Footer extends StatefulWidget {
 
 class _Footer extends State {
   int _selectedIndex = 0;
-  static const TextStyle optionStyle =
-      TextStyle(fontSize: 10, fontWeight: FontWeight.bold);
+  static const TextStyle optionStyle = TextStyle(
+      fontSize: 10, fontWeight: FontWeight.bold, backgroundColor: Colors.white);
 
   void _onItemTapped(int index) {
     setState(() {
@@ -18,62 +18,52 @@ class _Footer extends State {
     });
   }
 
+  /* MaterialクラスをラッパーにしてBoxDecoration:gradientを適用したContainerを親にしたり
+     SizedBox()やStack()を親にしてWidgetを重ねてみたりしてみたが、いずれの方法も
+     BottomNavigationBarItemをバラバラに囲んで背景をグラデーションにすることは叶わず
+     BottomNavigationBarを使わずRow, Column, Containerの組み合わせで作った方が早そう
+   */
   @override
   Widget build(BuildContext context) {
     return Material(
       color: Colors.blueGrey,
-      child: Stack(
+      child: Row(
         children: <Widget>[
-          Row(
-            children: <Widget>[
-              Expanded(
-                child: BottomNavigationBar(
-                  backgroundColor: Colors.blue,
-                  items: [
-                    BottomNavigationBarItem(
-                      icon: Icon(
-                        Icons.home,
-                        color: Colors.white,
-                      ),
-                      title: Text('HOME', style: optionStyle),
-                    ),
-                    BottomNavigationBarItem(
-                      icon: Icon(
-                        Icons.mail_outline,
-                        color: Colors.white,
-                      ),
-                      title: Text(
-                        'CONTACT',
-                        style: optionStyle,
-                      ),
-                    ),
-                    BottomNavigationBarItem(
-                      icon: Icon(
-                        Icons.person,
-                        color: Colors.white,
-                      ),
-                      title: Text(
-                        'LOGIN',
-                        style: optionStyle,
-                      ),
-                    ),
-                  ],
-                  currentIndex: _selectedIndex,
-                  onTap: _onItemTapped,
-                  selectedItemColor: Colors.amber[800],
+          Expanded(
+            child: BottomNavigationBar(
+              backgroundColor: Colors.blue,
+              items: [
+                BottomNavigationBarItem(
+                  icon: Icon(
+                    Icons.home,
+                    color: Colors.white,
+                  ),
+                  title: Text('HOME', style: optionStyle),
                 ),
-              ),
-            ],
-          ),
-          Container(
-            width: 400,
-            height: 20,
-            decoration: BoxDecoration(
-              gradient: LinearGradient(
-                colors: [Colors.blue, Colors.pink],
-                begin: Alignment.topCenter,
-                end: Alignment.bottomCenter,
-              ),
+                BottomNavigationBarItem(
+                  icon: Icon(
+                    Icons.mail_outline,
+                    color: Colors.white,
+                  ),
+                  title: Text(
+                    'CONTACT',
+                    style: optionStyle,
+                  ),
+                ),
+                BottomNavigationBarItem(
+                  icon: Icon(
+                    Icons.person,
+                    color: Colors.white,
+                  ),
+                  title: Text(
+                    'LOGIN',
+                    style: optionStyle,
+                  ),
+                ),
+              ],
+              currentIndex: _selectedIndex,
+              onTap: _onItemTapped,
+              selectedItemColor: Colors.amber[800],
             ),
           ),
         ],
