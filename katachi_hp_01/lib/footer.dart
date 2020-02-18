@@ -22,56 +22,61 @@ class _Footer extends State {
   Widget build(BuildContext context) {
     return Material(
       color: Colors.blueGrey,
-      child: Container(
-        decoration: BoxDecoration(
-          gradient: LinearGradient(
-            colors: [Colors.blue, Colors.pink],
-            begin: Alignment.topCenter,
-            end: Alignment.bottomCenter,
+      child: Stack(
+        children: <Widget>[
+          Row(
+            children: <Widget>[
+              Expanded(
+                child: BottomNavigationBar(
+                  backgroundColor: Colors.blue,
+                  items: [
+                    BottomNavigationBarItem(
+                      icon: Icon(
+                        Icons.home,
+                        color: Colors.white,
+                      ),
+                      title: Text('HOME', style: optionStyle),
+                    ),
+                    BottomNavigationBarItem(
+                      icon: Icon(
+                        Icons.mail_outline,
+                        color: Colors.white,
+                      ),
+                      title: Text(
+                        'CONTACT',
+                        style: optionStyle,
+                      ),
+                    ),
+                    BottomNavigationBarItem(
+                      icon: Icon(
+                        Icons.person,
+                        color: Colors.white,
+                      ),
+                      title: Text(
+                        'LOGIN',
+                        style: optionStyle,
+                      ),
+                    ),
+                  ],
+                  currentIndex: _selectedIndex,
+                  onTap: _onItemTapped,
+                  selectedItemColor: Colors.amber[800],
+                ),
+              ),
+            ],
           ),
-        ),
-        // BottomNavigationBarの背景色がどうしてもグラデーションにできないので変更
-        child: Row(
-          children: <Widget>[
-            Expanded(
-              child: BottomNavigationBar(
-                backgroundColor: Colors.blue,
-                items: [
-                  BottomNavigationBarItem(
-                    icon: Icon(
-                      Icons.home,
-                      color: Colors.white,
-                    ),
-                    title: Text('HOME', style: optionStyle),
-                  ),
-                  BottomNavigationBarItem(
-                    icon: Icon(
-                      Icons.mail_outline,
-                      color: Colors.white,
-                    ),
-                    title: Text(
-                      'CONTACT',
-                      style: optionStyle,
-                    ),
-                  ),
-                  BottomNavigationBarItem(
-                    icon: Icon(
-                      Icons.person,
-                      color: Colors.white,
-                    ),
-                    title: Text(
-                      'LOGIN',
-                      style: optionStyle,
-                    ),
-                  ),
-                ],
-                currentIndex: _selectedIndex,
-                onTap: _onItemTapped,
-                selectedItemColor: Colors.amber[800],
+          Container(
+            width: 400,
+            height: 20,
+            decoration: BoxDecoration(
+              gradient: LinearGradient(
+                colors: [Colors.blue, Colors.pink],
+                begin: Alignment.topCenter,
+                end: Alignment.bottomCenter,
               ),
             ),
-          ],
-        ),
+          ),
+        ],
       ),
     );
   }

@@ -10,8 +10,8 @@ class Home extends StatelessWidget {
           IconButton(
             icon: Icon(
               Icons.menu,
-              size: 30,
-              color: Color.fromRGBO(20, 250, 30, 0.7),
+              size: 40,
+              color: Color.fromRGBO(80, 40, 60, 0.6),
             ),
             onPressed: () {
               // TODO

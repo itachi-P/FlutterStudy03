@@ -43,7 +43,7 @@ class _State extends State<MyApp> {
         child: Column(
           children: <Widget>[
             Container(
-              width: 400,
+              width: 380,
               height: 140.0,
               padding: EdgeInsets.fromLTRB(8.0, 0, 8.0, 0),
               child: Image.network(
@@ -52,7 +52,7 @@ class _State extends State<MyApp> {
             Container(
               color: Colors.blue,
               width: 400.0,
-              height: 150.0,
+              height: 200.0,
               alignment: Alignment.center,
               padding: const EdgeInsets.all(15.0),
               margin: const EdgeInsets.fromLTRB(0, 0, 8.0, 8.0),
@@ -73,8 +73,8 @@ class _State extends State<MyApp> {
               ),
             ),
             Container(
-              color: Colors.white,
-              width: 400.0,
+              color: Color.fromRGBO(230, 230, 230, 0.8),
+              width: 380.0,
               height: 250.0,
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceAround,
@@ -83,12 +83,16 @@ class _State extends State<MyApp> {
                     child: Image.asset(
                       'images/katachi_row01.png',
                       width: 160.0,
+                      color: Colors.purple,
+                      colorBlendMode: BlendMode.plus,
                     ),
                   ),
                   Container(
                     child: Image.asset(
                       'images/katachi_row02.png',
                       width: 160.0,
+                      color: Colors.lightGreenAccent.withOpacity(0.2),
+                      colorBlendMode: BlendMode.srcOver,
                     ),
                   ),
                 ],
