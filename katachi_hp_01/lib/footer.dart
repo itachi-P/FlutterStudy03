@@ -31,13 +31,14 @@ class _Footer extends State {
         children: <Widget>[
           Expanded(
             child: BottomNavigationBar(
-              backgroundColor: Colors.blue,
+              backgroundColor: Colors.lightBlue,
               items: [
                 BottomNavigationBarItem(
                   icon: Icon(
                     Icons.home,
                     color: Colors.white,
                   ),
+                  backgroundColor: Colors.blue,
                   title: Text('HOME', style: optionStyle),
                 ),
                 BottomNavigationBarItem(
@@ -45,6 +46,7 @@ class _Footer extends State {
                     Icons.mail_outline,
                     color: Colors.white,
                   ),
+                  backgroundColor: Colors.yellow,
                   title: Text(
                     'CONTACT',
                     style: optionStyle,
@@ -55,6 +57,7 @@ class _Footer extends State {
                     Icons.person,
                     color: Colors.white,
                   ),
+                  backgroundColor: Colors.red,
                   title: Text(
                     'LOGIN',
                     style: optionStyle,
@@ -63,7 +66,9 @@ class _Footer extends State {
               ],
               currentIndex: _selectedIndex,
               onTap: _onItemTapped,
-              selectedItemColor: Colors.amber[800],
+              //selectedItemColor: Colors.amber[800],
+              fixedColor: Colors.pinkAccent[200],
+              type: BottomNavigationBarType.shifting,
             ),
           ),
         ],
